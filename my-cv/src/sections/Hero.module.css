@@ -1,0 +1,63 @@
+:root {
+  --blush-taupe: #b8abab;
+  --black: #000614;
+  --oxford-blue: #222935;
+  --blush-pink: #e1caca;
+}
+.heroSection {
+  padding: 80px 20px;
+  text-align: center;
+}
+.heroBg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.heroImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--blush-pink);
+}
+
+.position {
+  font-size: 1.5rem;
+  color: var(--blush-taupe);
+  margin-bottom: 15px;
+}
+
+.description {
+  font-size: 1rem;
+  color: var(--blush-taupe);
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+}
+
+.button {
+  background-color: var(--oxford-blue);
+  color: var(--blush-taupe);
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: var(--black);
+}

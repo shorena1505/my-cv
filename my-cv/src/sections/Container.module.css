@@ -1,0 +1,167 @@
+/* src/Container.module.css */
+
+.container {
+  display: flex; /* ეს მაინც საჭიროა, თუ მომავალში Sidebar-ს დაამატებ */
+  justify-content: center; /* ცენტრში განლაგება თუ არ არის Sidebar */
+  align-items: flex-start; /* კონტენტი ზემოდან იწყება */
+  min-height: 100vh; /* უზრუნველყოფს, რომ კონტეინერი მთელ ეკრანზე იყოს */
+  background-color: #eef1f5; /* ღია ფონის ფერი მთელი გვერდისთვის */
+  font-family: Arial, sans-serif; /* შრიფტი */
+  padding: 20px; /* მთლიანი კონტეინერის გარშემო დაშორება */
+  box-sizing: border-box; /* padding არ ზრდის ელემენტის ზომას */
+}
+
+.mainContent {
+  flex-grow: 1; /* იკავებს დარჩენილ სივრცეს */
+  max-width: 900px; /* მაქსიმალური სიგანე, რომ არ გაიწელოს ძალიან */
+  background-color: #ffffff; /* თეთრი ფონი მთავარი კონტენტისთვის */
+  border-radius: 8px; /* ოდნავ მომრგვალებული კუთხეები */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* დახვეწილი ჩრდილი */
+  padding: 40px; /* შიდა დაშორება კონტენტის გარშემო */
+  line-height: 1.6; /* ხაზებს შორის დაშორება წაკითხვადობისთვის */
+  color: #333; /* ძირითადი ტექსტის ფერი */
+}
+
+.mainContent h1 {
+  font-size: 2.5em; /* დიდი ზომის სათაური */
+  color: #2c3e50; /* მუქი ფერი სათაურისთვის */
+  margin-bottom: 30px; /* დაშორება ქვემოთ */
+  text-align: center; /* ცენტრში განლაგება */
+}
+
+/* CV სექციების სტილები */
+.cvSection {
+  margin-bottom: 40px; /* დაშორება სექციებს შორის */
+  padding-bottom: 20px; /* სექციის ბოლოში დაშორება */
+  border-bottom: 1px solid #e0e0e0; /* გამყოფი ხაზი სექციებს შორის */
+}
+
+.cvSection:last-child {
+  border-bottom: none; /* ბოლო სექციას არ აქვს გამყოფი ხაზი */
+}
+
+.cvSection h2 {
+  color: #007bff; /* სათაურის ფერი, ცისფერი აქცენტი */
+  font-size: 1.8em; /* შედარებით დიდი სათაური */
+  margin-bottom: 15px; /* დაშორება ტექსტთან */
+  padding-bottom: 5px; /* ხაზსა და ტექსტს შორის დაშორება */
+  border-bottom: 2px solid #007bff; /* ლურჯი ხაზი სათაურის ქვეშ */
+  display: inline-block; /* ხაზი მხოლოდ ტექსტის სიგანეზე */
+}
+
+.cvSection p {
+  margin-bottom: 10px;
+}
+
+/* განათლებისა და გამოცდილების ქრონოლოგიის სტილები */
+.educationTimeline,
+.experienceItem {
+  margin-bottom: 25px; /* დაშორება ჩანაწერებს შორის */
+  padding-left: 20px; /* ჩადგმა შიგნით */
+  position: relative; /* საჭიროა ფსევდო-ელემენტებისთვის */
+}
+
+.educationTimeline:not(:last-child)::before,
+.experienceItem:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #ddd; /* ქრონოლოგიის ხაზის ფერი */
+}
+
+.educationItem h3,
+.experienceItem h3 {
+  color: #333;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
+
+.experienceItem h4 {
+  color: #555;
+  margin-bottom: 5px;
+  font-size: 1.1em;
+}
+
+/* უნარების სია */
+.skillsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skillsList li {
+  background-color: #e9e9e9;
+  color: #333;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+/* კონტაქტების სექციისთვის (სურათის მიხედვით) */
+.cvSection#contacts p {
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.cvSection#contacts a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.cvSection#contacts a:hover {
+  text-decoration: underline;
+}
+
+/* პორტფოლიოს სექციისთვის (სურათის მიხედვით) */
+.portfolioGrid {
+  /* დავამატე კლასი portfolio-grid-ის ნაცვლად */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.portfolioItem {
+  /* დავამატე კლასი portfolio-item-ის ნაცვლად */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.portfolioItem img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.portfolioItem p {
+  padding: 10px;
+  margin: 0;
+  background-color: #f8f8f8;
+  color: #555;
+}
+
+/* მედია ქუერი რესპონსივობისთვის */
+@media (max-width: 768px) {
+  .mainContent {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .mainContent h1 {
+    font-size: 2em;
+  }
+
+  .cvSection h2 {
+    font-size: 1.5em;
+  }
+}
