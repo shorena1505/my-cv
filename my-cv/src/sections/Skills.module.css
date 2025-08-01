@@ -1,0 +1,57 @@
+:root {
+  --dirty-white: #eef1f5;
+  --white: #ffffff;
+  --font-color: #333;
+  --title-color: #2c3e50;
+  --seperating-line: #e0e0e0;
+  --green: #26c17e;
+  --titleColor: #eeeeee;
+  --grey-blue: #667081;
+}
+.skillsHeading {
+  color: var(--green);
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+.skillsList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.skillItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.skillName {
+  width: 160px;
+  font-weight: bold;
+  color: var(--green);
+  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.skillBar {
+  flex-grow: 1;
+  height: 29px;
+}
+
+.skillLevel {
+  height: 100%;
+  background-color: var(--green);
+}
+
+.proficiencyLabels {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+  border-top: 1px solid var(--grey-blue);
+  margin-top: 32px;
+  font-size: 13px;
+  color: var(--grey-blue);
+}

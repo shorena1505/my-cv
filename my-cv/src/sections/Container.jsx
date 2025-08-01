@@ -1,4 +1,11 @@
 import styles from "./Container.module.css";
+import PenIcon from "../assets/icons/pen.png";
+import greenLine from "../assets/icons/greenLine.png";
+import card from "../assets/card.png";
+import cardTwo from "../assets/cardTwo.png";
+import cardThree from "../assets/cardThree.png";
+
+import Skills from "./Skills";
 
 const Container = () => {
   return (
@@ -6,10 +13,11 @@ const Container = () => {
       {/* <Sidebar />  ამას არ ვრთავთ, რადგან საიდბარი არ გინდა ამჯერად */}
 
       <main className={styles.mainContent}>
-        <h1>Shorena</h1>
-
         <section id="about-me" className={styles.cvSection}>
-          <h2>About me</h2>
+          <h2>
+            About me
+            <img src={PenIcon} alt="Pen Icon" className={styles.headingIcon} />
+          </h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
             commodo ligula eget dolor. Aenean massa. Cum sociis natoque
@@ -26,42 +34,65 @@ const Container = () => {
 
         <section id="education" className={styles.cvSection}>
           <h2>Education</h2>
-          <div className={styles.educationTimeline}>
-            <div className={styles.educationItem}>
-              <h3>2014 - Title</h3>
-              <p>
-                Description of degree/school. Lorem ipsum dolor sit amet,
-                consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                Aenean massa. Cum sociis natoque penatibus et magnis dis
-                parturient montes, nascetur ridiculus mus.
-              </p>
+          <div className={styles.educationContainer}>
+            {/* Content for the first container */}
+            <div className={styles.education}>
+              <h3>2014</h3>
+              <img
+                src={greenLine}
+                alt="Green Line"
+                className={styles.greenLine}
+              />
+              <h3>2018</h3>
+              <img
+                src={greenLine}
+                alt="Green Line"
+                className={styles.greenLine}
+              />
+              <h3>2025</h3>
             </div>
-            <div className={styles.educationItem}>
-              <h3>2020 - Title</h3>
-              <p>
-                Description of degree/school. Lorem ipsum dolor sit amet,
-                consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                Aenean massa. Cum sociis natoque penatibus et magnis dis
-                parturient montes, nascetur ridiculus mus.
-              </p>
+            {/* Content for the second container (your timeline) */}
+            <div className={styles.educationTimeline}>
+              <div className={styles.educationItemOne}>
+                <p>
+                  Description of degree/school. Lorem ipsum dolor sit amet,
+                  consectetuer adipiscing elit. Aenean commodo ligula eget
+                  dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+                  dis parturient montes, nascetur ridiculus mus.
+                </p>
+              </div>
+              <div className={styles.educationItem}>
+                <p>
+                  Description of degree/school. Lorem ipsum dolor sit amet,
+                  consectetuer adipiscing elit. Aenean commodo ligula eget
+                  dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+                  dis parturient montes, nascetur ridiculus mus.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
         <section id="experience" className={styles.cvSection}>
-          <h2>Experience</h2>
+          <h2>
+            Experience
+            <img src={PenIcon} alt="Pen Icon" className={styles.headingIcon} />
+          </h2>
           <div className={styles.experienceItem}>
-            <h3>Front-end developer & php programmer</h3>
+            <h3>
+              <b>2024</b> Front-end developer & php programmer
+            </h3>
             <h4>Google</h4>
             <p>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
               commodo ligula eget dolor. Aenean massa. Cum sociis natoque
               penatibus et magnis dis parturient montes, nascetur ridiculus mus.
             </p>
-            <p>2012-2015</p>
           </div>
           <div className={styles.experienceItem}>
-            <h3>Web Developer</h3>
+            <h3>
+              <b>2025</b> Web Developer
+            </h3>
             <h4>Twitter</h4>
             <p>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
@@ -72,25 +103,20 @@ const Container = () => {
           </div>
         </section>
 
-        {/* SKILLS სექცია გამოტანილია experience სექციიდან */}
         <section id="skills" className={styles.cvSection}>
-          <h2>Skills</h2>
-          <ul className={styles.skillsList}>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>CSS</li>
-            <li>HTML</li>
-            <li>Git</li>
-            <li>Responsive Design</li>
-          </ul>
+          <Skills />
         </section>
-
-        {/* აქ დაამატე სხვა სექციებიც, როგორიცაა Portfolio, Contacts, Feedbacks */}
-        {/* რადგან სურათზეა ესენი, Container.jsx-შიც უნდა იყოს, თუნდაც ცარიელი */}
 
         <section id="portfolio" className={styles.cvSection}>
           <h2>Portfolio</h2>
-          {/* აქ შეგიძლია ჩასვა პორტფოლიოს ელემენტები */}
+          <div className="styles.cards">
+            <h4>
+              All /<span>Code</span> / UI
+            </h4>
+            <img src={card} alt="First Card" className={styles.card} />
+            <img src={cardThree} alt="Third Card" className={styles.card} />
+            <img src={cardTwo} alt="Second Card" className={styles.card} />
+          </div>
         </section>
 
         <section id="contacts" className={styles.cvSection}>

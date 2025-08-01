@@ -1,39 +1,48 @@
 /* src/Container.module.css */
-
+:root {
+  --dirty-white: #eef1f5;
+  --white: #ffffff;
+  --font-color: #333;
+  --title-color: #2c3e50;
+  --seperating-line: #e0e0e0;
+  --green: #26c17e;
+  --titleColor: #eeeeee;
+  --grey-blue: #667081;
+}
 .container {
-  display: flex; /* ეს მაინც საჭიროა, თუ მომავალში Sidebar-ს დაამატებ */
-  justify-content: center; /* ცენტრში განლაგება თუ არ არის Sidebar */
-  align-items: flex-start; /* კონტენტი ზემოდან იწყება */
-  min-height: 100vh; /* უზრუნველყოფს, რომ კონტეინერი მთელ ეკრანზე იყოს */
-  background-color: #eef1f5; /* ღია ფონის ფერი მთელი გვერდისთვის */
-  font-family: Arial, sans-serif; /* შრიფტი */
-  padding: 20px; /* მთლიანი კონტეინერის გარშემო დაშორება */
-  box-sizing: border-box; /* padding არ ზრდის ელემენტის ზომას */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background-color: var(--dirty-white);
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .mainContent {
-  flex-grow: 1; /* იკავებს დარჩენილ სივრცეს */
-  max-width: 900px; /* მაქსიმალური სიგანე, რომ არ გაიწელოს ძალიან */
-  background-color: #ffffff; /* თეთრი ფონი მთავარი კონტენტისთვის */
-  border-radius: 8px; /* ოდნავ მომრგვალებული კუთხეები */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* დახვეწილი ჩრდილი */
-  padding: 40px; /* შიდა დაშორება კონტენტის გარშემო */
-  line-height: 1.6; /* ხაზებს შორის დაშორება წაკითხვადობისთვის */
-  color: #333; /* ძირითადი ტექსტის ფერი */
+  flex-grow: 1;
+  max-width: 1000px;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  line-height: 1.6;
+  color: var(--font-color);
 }
 
 .mainContent h1 {
-  font-size: 2.5em; /* დიდი ზომის სათაური */
-  color: #2c3e50; /* მუქი ფერი სათაურისთვის */
-  margin-bottom: 30px; /* დაშორება ქვემოთ */
-  text-align: center; /* ცენტრში განლაგება */
+  font-size: 2.5em;
+  color: var(--title-color); /* მუქი ფერი სათაურისთვის */
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 /* CV სექციების სტილები */
 .cvSection {
-  margin-bottom: 40px; /* დაშორება სექციებს შორის */
-  padding-bottom: 20px; /* სექციის ბოლოში დაშორება */
-  border-bottom: 1px solid #e0e0e0; /* გამყოფი ხაზი სექციებს შორის */
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--seperating-line); /* გამყოფი ხაზი სექციებს შორის */
 }
 
 .cvSection:last-child {
@@ -41,12 +50,11 @@
 }
 
 .cvSection h2 {
-  color: #007bff; /* სათაურის ფერი, ცისფერი აქცენტი */
-  font-size: 1.8em; /* შედარებით დიდი სათაური */
-  margin-bottom: 15px; /* დაშორება ტექსტთან */
-  padding-bottom: 5px; /* ხაზსა და ტექსტს შორის დაშორება */
-  border-bottom: 2px solid #007bff; /* ლურჯი ხაზი სათაურის ქვეშ */
-  display: inline-block; /* ხაზი მხოლოდ ტექსტის სიგანეზე */
+  color: var(--green);
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  display: inline-block;
 }
 
 .cvSection p {
@@ -54,114 +62,54 @@
 }
 
 /* განათლებისა და გამოცდილების ქრონოლოგიის სტილები */
-.educationTimeline,
-.experienceItem {
-  margin-bottom: 25px; /* დაშორება ჩანაწერებს შორის */
-  padding-left: 20px; /* ჩადგმა შიგნით */
-  position: relative; /* საჭიროა ფსევდო-ელემენტებისთვის */
+
+.educationContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: flex-start;
 }
 
-.educationTimeline:not(:last-child)::before,
-.experienceItem:not(:last-child)::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background-color: #ddd; /* ქრონოლოგიის ხაზის ფერი */
+.educationTimeline {
+  margin: 70px 0px;
+  padding-left: 10px;
 }
-
+.greenLine {
+  margin-left: 20px;
+}
 .educationItem h3,
 .experienceItem h3 {
-  color: #333;
+  color: var(--font-color);
   margin-bottom: 5px;
   font-size: 1.2em;
 }
 
-.experienceItem h4 {
-  color: #555;
-  margin-bottom: 5px;
-  font-size: 1.1em;
-}
-
-/* უნარების სია */
-.skillsList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.skillsList li {
-  background-color: #e9e9e9;
-  color: #333;
-  padding: 8px 15px;
-  border-radius: 5px;
-  font-size: 0.9em;
-  white-space: nowrap;
-}
-
-/* კონტაქტების სექციისთვის (სურათის მიხედვით) */
-.cvSection#contacts p {
-  margin-bottom: 8px;
-  color: #555;
-}
-
-.cvSection#contacts a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.cvSection#contacts a:hover {
-  text-decoration: underline;
-}
-
-/* პორტფოლიოს სექციისთვის (სურათის მიხედვით) */
-.portfolioGrid {
-  /* დავამატე კლასი portfolio-grid-ის ნაცვლად */
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.portfolioItem {
-  /* დავამატე კლასი portfolio-item-ის ნაცვლად */
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.portfolioItem img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.portfolioItem p {
+.educationItem p {
+  margin-top: 80px;
+  background-color: var(--titleColor);
+  width: 891px;
+  height: 90px;
   padding: 10px;
-  margin: 0;
-  background-color: #f8f8f8;
-  color: #555;
+}
+.educationItemOne {
+  background-color: var(--titleColor);
+  width: 891px;
+  height: 90px;
+  padding: 10px;
 }
 
-/* მედია ქუერი რესპონსივობისთვის */
-@media (max-width: 768px) {
-  .mainContent {
-    padding: 20px;
-    margin: 10px;
-  }
-
-  .mainContent h1 {
-    font-size: 2em;
-  }
-
-  .cvSection h2 {
-    font-size: 1.5em;
-  }
+.cards {
+  display: flex;
+  flex-direction: column;
+}
+.card {
+  margin: 0px 12px;
+}
+h4 {
+  color: var(--green);
+  padding-left: 12px;
+}
+span {
+  color: var(--grey-blue);
+  padding-left: 2px;
 }
